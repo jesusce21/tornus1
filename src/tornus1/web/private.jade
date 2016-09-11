@@ -1,0 +1,30 @@
+html
+    head
+        title Tornus1
+        block styles
+            link(rel='stylesheet', href='/static/uikit/css/uikit.gradient.min.css')
+
+        style(media='screen', type='text/css').
+            #page {
+                width: 970px;
+                margin: auto;
+            }
+            #header, #content { margin-top: 20px;}
+            #footer { margin-top: 180px;}
+
+    body
+        #page
+            #header
+                h1 Tornus1
+
+            #content
+                block content
+
+            #footer.uk-grid
+                .uk-container-center
+                    | &copy; 2016 Ángel Olea Gómez&nbsp;&nbsp;&nbsp;
+                    a(href='http://www.ovalo-software.com') Óvalo Software
+
+        block scripts
+            script(src='/static/jquery/jquery-min.js')
+            script(src='/static/uikit/js/uikit.min.js')

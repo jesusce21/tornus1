@@ -1,0 +1,40 @@
+extends '../private.jade'
+
+mixin form(legend)
+    form.uk-form(method='post')
+        legend #{_(legend)}
+        block
+
+mixin form_row(label)
+    .uk-grid.uk-grid-small
+        label.uk-width-1-3.uk-form-label
+            span.uk-align-right #{label}
+        .uk-width-2-3
+            block
+
+mixin form_buttons()
+    .uk-grid
+        .uk-width-3-4
+            span.uk-align-right
+                block
+
+mixin form_button_cancel(label)
+    button.uk-button #{_(label or 'Cancel')}
+
+mixin form_button_create(label)
+    button.uk-button #{_(label or 'Create')}
+
+
+block content
+
+    +form('Create a new Record')
+
+        +form_row('Name')
+            input(type='text', size=40, name='name')
+
+        +form_row('Description')
+            textarea(cols=40, rows=3, name='description')
+
+        +form_buttons()
+            //+form_button_cancel('')
+            +form_button_create('')
